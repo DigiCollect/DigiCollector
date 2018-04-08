@@ -1,9 +1,9 @@
 import React from 'react';
-import Menu from './Menu.js'
+import Login from './Login.js'
 
 const Home = () => {
   return (
-     <Menu />
+     <Login />
   )
 }
 export default Home
