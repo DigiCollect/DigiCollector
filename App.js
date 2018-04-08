@@ -1,12 +1,23 @@
 import React from 'react';
-import Login from './Login.js'
+import Login from './Login.js';
+import Routes from './src/components/routes/Routes.js';
 
-const Home = () => {
-  return (
-     <Login />
-  )
+class App extends React.Component {
+  render() {
+    return (
+      <Routes />
+      // <Login />
+    )
+  }
 }
-export default Home
+export default App
+
+// const Home = () => {
+//   return (
+//      <Login />
+//   )
+// }
+// export default Home
 
 // import React from 'react';
 // import { Text, View } from 'react-native';
