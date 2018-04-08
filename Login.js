@@ -20,7 +20,7 @@ class Login extends Component {
       <View style={styles.container}>
         <Image style= {styles.background} source={require('./Images/back.jpg')}/>
         <Text style={styles.text}>One less thing to worry about</Text> 
-        <TouchableOpacity style={styles.button} onPress = {this.goToMenu}>
+        <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToMenu}>
             <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
       </View>
@@ -33,22 +33,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#333',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   background: {
     backgroundColor: '#ccc',
+    opacity: 0.4,
     flex: 1,
     position: 'absolute',
     width: '100%',
     height: '100%',
   },
   text: {
-    // textAlign: 'center',
-    marginTop: '40%',
-    color: '#333',
-    fontWeight: 'bold',
-    fontSize: 22
+    textAlign: 'center',
+    //marginTop: '40%',
+    color: '#fff',
+    fontWeight: '300',
+    fontFamily: 'Helvetica Neue',
+    paddingLeft:10,
+    paddingRight:10,
+    fontSize: 36
   },
   button: {
       backgroundColor: '#333',
@@ -61,10 +65,22 @@ const styles = StyleSheet.create({
   buttonText: {
       color: '#fff',
       position: 'absolute',
+      fontWeight: '500',
+      fontFamily: 'Helvetica Neue',
       paddingTop:0,
       marginTop: 0,
-      fontSize: 28, 
+      fontSize: 19, 
     //   justifyContent: 'center',
     //   alignItems: 'center',
-  }
+  },
+  OvalShapeView: {
+    marginTop: 20,
+    width: 315,
+    height: 56,
+    backgroundColor: '#2C900C',
+    borderRadius: 65,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
 });
