@@ -1,6 +1,4 @@
-// import React from 'react';
-// import { Text, View } from 'react-native';
-import PresentationalComponent from './PresentationalComponent'
+import PresentationalComponent from './src/components/app-start/PresentationalComponent'
 import React, {Component} from 'react'
 import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native'
 import {Actions} from 'react-native-router-flux';
@@ -18,11 +16,14 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style= {styles.background} source={require('./Images/back.jpg')}/>
-        <Text style={styles.text}>One less thing to worry about</Text> 
-        <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToMenu}>
-            <Text style={styles.buttonText}>Get Started</Text>
-        </TouchableOpacity>
+          <Image style= {styles.background} source={require('./Images/BG.png')}/>
+          <View style={styles.content}>
+            <Image source={require('./Images/Logo.png')}/>
+            <Text style={styles.text}>One less thing to worry about</Text> 
+            <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToMenu}>
+                <Text style={styles.buttonText}>Get Started</Text>
+            </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -38,11 +39,16 @@ const styles = StyleSheet.create({
   },
   background: {
     backgroundColor: '#ccc',
-    opacity: 0.4,
+    opacity: 0.5,
     flex: 1,
     position: 'absolute',
     width: '100%',
     height: '100%',
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
   text: {
     textAlign: 'center',
