@@ -1,14 +1,13 @@
 import PresentationalComponent from './src/components/app-start/PresentationalComponent'
 import React, {Component} from 'react'
 import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native'
+import Inputs from './Inputs.js'
 import {Actions} from 'react-native-router-flux';
 
-class Login extends Component {
-  state = {
-    myState: 'One less thing to worry about'
-  }
-  goToSignIn = () => {
-    Actions.signIn()
+class SignIn extends Component {
+
+  goToMenu = () => {
+    Actions.menu()
   }
 
   render() {
@@ -17,16 +16,16 @@ class Login extends Component {
           <Image style= {styles.background} source={require('./Images/BG.png')}/>
           <View style={styles.content}>
             <Image source={require('./Images/Logo.png')}/>
-            <Text style={styles.text}>One less thing to worry about</Text> 
-            <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToSignIn}>
-                <Text style={styles.buttonText}>Get Started</Text>
+            <Inputs />
+            <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToMenu}>
+                <Text style={styles.buttonText}>Sign In</Text>
             </TouchableOpacity>
         </View>
       </View>
     );
   }
 }
-export default Login
+export default SignIn
 
 const styles = StyleSheet.create({
   container: {
@@ -48,16 +47,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-  text: {
-    textAlign: 'center',
-    //marginTop: '40%',
-    color: '#fff',
-    fontWeight: '300',
-    fontFamily: 'Helvetica Neue',
-    paddingLeft:10,
-    paddingRight:10,
-    fontSize: 36
-  },
   button: {
       backgroundColor: '#333',
       justifyContent: 'center',
@@ -74,8 +63,6 @@ const styles = StyleSheet.create({
       paddingTop:0,
       marginTop: 0,
       fontSize: 19, 
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
   },
   OvalShapeView: {
     marginTop: 20,
