@@ -1,12 +1,14 @@
 import React from 'react'
 import { Router, Scene } from 'react-native-router-flux'
-import Login from '../../../Login.js'
+import StartUp from '../../../Start-up.js'
+import SignIn from '../../../Sign-in.js'
 import Menu from '../../../Menu.js'
 
 const Routes = () => (
     <Router>
         <Scene key = "root">
-            <Scene key = "login" component = {Login} title = "Login" initial = {true} />
+            <Scene key = "startUp" component = {StartUp} title = "StartUp" initial = {true} hideNavBar={true}/>
+            <Scene key = "signIn" component = {SignIn} title = "SignIn" hideNavBar={true}/>
             <Scene key = "menu" component = {Menu} title = "Menu" />
         </Scene>
     </Router>
