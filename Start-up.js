@@ -1,7 +1,7 @@
-import PresentationalComponent from './src/components/app-start/PresentationalComponent'
 import React, {Component} from 'react'
 import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native'
 import {Actions} from 'react-native-router-flux';
+// import PresentationalComponent from './src/components/sign-in/PresentationalComponent'
 
 class Login extends Component {
   state = {
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-    //marginTop: '40%',
     color: '#fff',
     fontWeight: '300',
     fontFamily: 'Helvetica Neue',
