@@ -28,6 +28,7 @@ class Inputs extends Component {
                 placeholder = "Username"
                 placeholderTextColor = "#fff"
                 autoCapitalize = "none"
+                maxLength = '12'
                 onChangeText = {this.handleUsername}/>
                 
                 <TextInput style = {styles.input}
@@ -35,6 +36,8 @@ class Inputs extends Component {
                 placeholder = "Password"
                 placeholderTextColor = "#fff"
                 autoCapitalize = "none"
+                secureTextEntry = {true}
+                maxLength = '12'
                 onChangeText = {this.handlePassword}/>
                 
                 <TouchableOpacity
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#333',
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
    },
    background: {
     backgroundColor: '#ccc',
@@ -73,14 +76,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
    input: {
-     justifyContent: 'flex-start',
+      justifyContent: 'flex-start',
       alignItems: 'flex-start',
       margin: 15,
       height: 40,
       fontFamily: 'Helvetica Neue',
       fontSize: 19,
-      borderBottomWidth: 1,
-      borderColor: '#fff'
+      color: '#fff',
+      // borderBottomWidth: 1,
+      // borderColor: '#fff'
    },
    OvalShapeView: {
     marginTop: 20,

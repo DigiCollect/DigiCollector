@@ -1,6 +1,7 @@
 import React from 'react';
 import StartUp from './Start-up.js';
 import Routes from './src/components/routes/Routes.js';
+console.disableYellowBox = true;
 
 class App extends React.Component {
   render() {
