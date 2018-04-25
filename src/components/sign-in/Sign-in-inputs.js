@@ -26,19 +26,32 @@ class Inputs extends Component {
                 <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
                 placeholder = "Username"
-                placeholderTextColor = "#fff"
+                placeholderTextColor = "#cccccc"
                 autoCapitalize = "none"
                 maxLength = '12'
-                onChangeText = {this.handleUsername}/>
-                
+                //onChangeText = {this.handleUsername}
+                />
+                {/* <View style = {styles.lineStyle} /> */}
+                              
                 <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
                 placeholder = "Password"
-                placeholderTextColor = "#fff"
+                placeholderTextColor = "#cccccc"
                 autoCapitalize = "none"
                 secureTextEntry = {true}
                 maxLength = '12'
-                onChangeText = {this.handlePassword}/>
+                onChangeText = {this.handlePassword}
+                /> 
+                {/* <View style = {styles.lineStyle} /> */}
+
+                 {/* <TextInput
+                style={styles.textInput} 
+                onSubmitEditing={this.onNewItem}
+                placeholder='Add New Item'
+                returnKeyType="done"
+                onChangeText={this.onChangeText}
+                value={this.state.item}
+                />  */}
                 
                 <TouchableOpacity
                 style = {styles.OvalShapeView}
@@ -77,8 +90,10 @@ const styles = StyleSheet.create({
   },
    input: {
       justifyContent: 'flex-start',
-      alignItems: 'flex-start',
+      alignItems: 'center',
+      textAlign: 'right',
       margin: 15,
+      padding: 10,
       height: 40,
       fontFamily: 'Helvetica Neue',
       fontSize: 19,
@@ -86,6 +101,11 @@ const styles = StyleSheet.create({
       // borderBottomWidth: 1,
       // borderColor: '#fff'
    },
+   lineStyle:{
+      borderWidth: 0.5,
+      borderColor:'#fff',
+      margin:10,
+  },
    OvalShapeView: {
     marginTop: 20,
     width: 315,
@@ -104,7 +124,7 @@ const styles = StyleSheet.create({
     marginTop: 0,
     fontSize: 19, 
     },
-    LinkText: {
+  LinkText: {
       color: '#fff'
     }
 })
