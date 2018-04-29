@@ -14,7 +14,7 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <Image style= {styles.background} source={require('./Images/BG.png')}/>
+          <Image style= {styles.background} source={require('./Images/BG.jpg')}/>
           <View style={styles.content}>
             <Image source={require('./Images/Logo.png')}/>
             <Text style={styles.text}>One less thing to worry about</Text> 

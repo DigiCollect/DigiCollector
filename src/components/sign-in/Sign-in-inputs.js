@@ -20,7 +20,7 @@ class Inputs extends Component {
    render(){
       return (
          <View style = {styles.container}>
-            <Image style= {styles.background} source={require('../../../Images/BG.png')}/>
+            <Image style= {styles.background} source={require('../../../Images/BG.jpg')}/>
             <View style={styles.content}>
                 <Image source={require('../../../Images/Logo.png')}/>
                 <TextInput style = {styles.input}
@@ -29,7 +29,7 @@ class Inputs extends Component {
                 placeholderTextColor = "#cccccc"
                 autoCapitalize = "none"
                 maxLength = '12'
-                //onChangeText = {this.handleUsername}
+                onChangeText = {this.handleUsername}
                 />
                 {/* <View style = {styles.lineStyle} /> */}
                               
@@ -42,16 +42,6 @@ class Inputs extends Component {
                 maxLength = '12'
                 onChangeText = {this.handlePassword}
                 /> 
-                {/* <View style = {styles.lineStyle} /> */}
-
-                 {/* <TextInput
-                style={styles.textInput} 
-                onSubmitEditing={this.onNewItem}
-                placeholder='Add New Item'
-                returnKeyType="done"
-                onChangeText={this.onChangeText}
-                value={this.state.item}
-                />  */}
                 
                 <TouchableOpacity
                 style = {styles.OvalShapeView}
@@ -77,7 +67,7 @@ const styles = StyleSheet.create({
    },
    background: {
     backgroundColor: '#ccc',
-    opacity: 0.5,
+    opacity: 0.4,
     flex: 1,
     position: 'absolute',
     width: '100%',
