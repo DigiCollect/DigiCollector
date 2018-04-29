@@ -4,20 +4,14 @@ import {Actions} from 'react-native-router-flux';
 
 class Inputs extends Component {
    state = {
-      username: '',
-      password: ''
+      emailaddress: '',
    }
-   handleUsername = (text) => {
-      this.setState({ username: text })
+   handleEmailAddress = (text) => {
+      this.setState({ emailaddress: text })
    }
-   handlePassword = (text) => {
-      this.setState({ password: text })
-   }
-   goToForgotPw = () => {
-    Actions.forgotPw()
-   }
-   login = (username, pass) => {
-      alert('username: ' + username + ' password: ' + pass)
+
+   login = (emailaddress) => {
+      alert('emailaddress: ' + emailaddress)
       Actions.menu()
    }
    render(){
@@ -25,35 +19,26 @@ class Inputs extends Component {
          <View style = {styles.container}>
             <Image style= {styles.background} source={require('../../../Images/BG.png')}/>
             <View style={styles.content}>
-                <Image source={require('../../../Images/Logo.png')}/>
-                <TextInput style = {styles.input}
-                underlineColorAndroid = "transparent"
-                placeholder = "Username"
-                placeholderTextColor = "#cccccc"
-                autoCapitalize = "none"
-                maxLength = '12'
-                onChangeText = {this.handleUsername}
-                />
-                              
-                <TextInput style = {styles.input}
-                underlineColorAndroid = "transparent"
-                placeholder = "Password"
-                placeholderTextColor = "#cccccc"
-                autoCapitalize = "none"
-                secureTextEntry = {true}
-                maxLength = '12'
-                onChangeText = {this.handlePassword}
-                /> 
+              {/* <View style = {styles.textContent}> */}
+                <Text style={styles.Headertext}>Recover your password</Text> 
+                  <TextInput style = {styles.input}
+                  underlineColorAndroid = "transparent"
+                  placeholder = "Email Address"
+                  placeholderTextColor = "#cccccc"
+                  autoCapitalize = "none"
+                  onChangeText = {this.handleEmailAddress}
+                  />
 
-                <TouchableOpacity onPress = {this.goToForgotPw}
-                ><Text color = "#cccccc">Forgot password</Text></TouchableOpacity>
+                  <Text style={styles.text}>
+                  Before we can reset your password, please enter your email address to help identify your account</Text>
+              {/* </View> */}
                 
                 <TouchableOpacity
                 style = {styles.OvalShapeView}
                 onPress = {
-                    () => this.login(this.state.username, this.state.password)
+                    () => this.login(this.state.emailaddress)
                 }>
-                <Text style = {styles.buttonText}>Log In</Text>
+                  <Text style = {styles.buttonText}>Search Account</Text>
                 </TouchableOpacity>
                 <Text style = {styles.LinkText}>Don't have an account? Sign Up</Text>
             </View>
@@ -72,7 +57,7 @@ const styles = StyleSheet.create({
    },
    background: {
     backgroundColor: '#ccc',
-    opacity: 0.4,
+    opacity: 0.5,
     flex: 1,
     position: 'absolute',
     width: '100%',
@@ -82,6 +67,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
+  },
+  textContent: {
+    //flexDirection: 'column',
+    //justifyContent: 'space-evenly',
+    //alignItems: 'center',
+  },
+  Headertext: {
+    textAlign: 'center',
+    color: '#fff',
+    fontWeight: '300',
+    fontFamily: 'Helvetica Neue',
+    paddingLeft:10,
+    paddingRight:10,
+    fontSize: 36
   },
    input: {
       justifyContent: 'flex-start',
@@ -93,8 +92,14 @@ const styles = StyleSheet.create({
       fontFamily: 'Helvetica Neue',
       fontSize: 19,
       color: '#fff',
-      // borderBottomWidth: 1,
-      // borderColor: '#fff'
+   },
+   text: {
+    textAlign: 'center',
+    color: '#fff',
+    fontFamily: 'Helvetica Neue',
+    paddingLeft: 20,
+    paddingRight: 20,
+    fontSize: 18
    },
    lineStyle:{
       borderWidth: 0.5,
