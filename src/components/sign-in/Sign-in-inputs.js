@@ -20,6 +20,9 @@ class Inputs extends Component {
       alert('username: ' + username + ' password: ' + pass)
       Actions.menu()
    }
+   goToSignIn = () => {
+    Actions.startUp()
+   }
    render(){
       return (
          <View style = {styles.container}>
@@ -55,7 +58,9 @@ class Inputs extends Component {
                 }>
                 <Text style = {styles.buttonText}>Log In</Text>
                 </TouchableOpacity>
-                <Text style = {styles.LinkText}>Don't have an account? Sign Up</Text>
+                <TouchableOpacity onPress = {this.goToSignIn}>
+                  <Text style = {styles.LinkText}>Don't have an account? Sign Up</Text>
+                </TouchableOpacity>             
             </View>
         </View>
       )

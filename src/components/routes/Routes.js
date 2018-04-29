@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router, Scene } from 'react-native-router-flux'
-import StartUp from '../../../Start-up.js'
+import StartUp from '../../Start-up.js'
 import SignIn from '../sign-in/Sign-in.js'
 import ForgotPw from '../forgot-pw/Forgot-pw.js'
 import Menu from '../../../Menu.js'
