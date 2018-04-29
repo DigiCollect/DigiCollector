@@ -21,6 +21,9 @@ class Login extends Component {
             <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToSignIn}>
                 <Text style={styles.buttonText}>Get Started</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress = {this.goToSignIn}>
+              <Text style = {styles.LinkText}>Already have an account? Sign In</Text>
+            </TouchableOpacity>
         </View>
       </View>
     );
@@ -85,5 +88,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  LinkText: {
+    color: '#fff'
+  }
 
 });
