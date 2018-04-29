@@ -12,14 +12,15 @@ class Inputs extends Component {
 
    login = (emailaddress) => {
       alert('emailaddress: ' + emailaddress)
-      Actions.menu()
+      //Actions.menu()
+      Actions.startUp()
    }
    render(){
       return (
          <View style = {styles.container}>
             <Image style= {styles.background} source={require('../../../Images/BG.png')}/>
             <View style={styles.content}>
-              {/* <View style = {styles.textContent}> */}
+
                 <Text style={styles.Headertext}>Recover your password</Text> 
                   <TextInput style = {styles.input}
                   underlineColorAndroid = "transparent"
