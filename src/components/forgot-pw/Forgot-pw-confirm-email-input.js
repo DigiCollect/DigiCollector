@@ -10,7 +10,7 @@ class Inputs extends Component {
       this.setState({ emailaddress: text })
    }
    goToSignUp = () => {
-      Actions.startUp()
+      Actions.signUp()
    }
    goToResetPassword = () => {
       Actions.resetPassword()

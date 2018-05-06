@@ -10,6 +10,9 @@ class Login extends Component {
   goToSignIn = () => {
     Actions.signIn()
   }
+  goToSignUp = () => {
+    Actions.signUp()
+  }
 
   render() {
     return (
@@ -18,7 +21,7 @@ class Login extends Component {
           <View style={styles.content}>
             <Image source={require('./../Images/Logo.png')}/>
             <Text style={styles.text}>One less thing to worry about</Text> 
-            <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToSignIn}>
+            <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToSignUp}>
                 <Text style={styles.buttonText}>Get Started</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress = {this.goToSignIn}>
