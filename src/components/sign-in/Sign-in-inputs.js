@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
 import {Actions} from 'react-native-router-flux';
+const Dimensions = require('Dimensions');
 
 class Inputs extends Component {
    state = {
@@ -48,8 +49,8 @@ class Inputs extends Component {
                 onChangeText = {this.handlePassword}
                 /> 
 
-                <TouchableOpacity onPress = {this.goToForgotPw}
-                ><Text color = "#cccccc">Forgot password</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.forgotPassword} onPress = {this.goToForgotPw}
+                ><Text style={styles.forgotPassword}>Forgot password</Text></TouchableOpacity>
                 
                 <TouchableOpacity
                 style = {styles.OvalShapeView}
@@ -87,24 +88,42 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
+    padding: 0,
+    margin: 0,
   },
    input: {
       justifyContent: 'flex-start',
-      alignItems: 'center',
-      textAlign: 'right',
-      margin: 15,
-      padding: 10,
+      textAlign: 'left',
+      alignSelf: 'flex-start',
+      paddingLeft: 15,
+      paddingBottom: 15,
       height: 40,
       fontFamily: 'Helvetica Neue',
       fontSize: 19,
       color: '#fff',
       // borderBottomWidth: 1,
       // borderColor: '#fff'
+      borderBottomWidth: 0.4,
+      borderColor:'#fff',
+      width: Dimensions.get('window').width,
+   },
+   forgotPassword: {
+      //justifyContent: 'flex-end',
+      paddingRight: 15,
+      //height: 40,
+      margin: 0,
+      textAlign: 'right',
+      alignSelf: 'flex-end',
+      fontFamily: 'Helvetica Neue',
+      fontSize: 15,
+      color: '#fff',
    },
    lineStyle:{
-      borderWidth: 0.5,
+      borderWidth: 0.4,
       borderColor:'#fff',
-      margin:10,
+      width: Dimensions.get('window').width,
+      margin: 0,
+      padding: 0,
   },
    OvalShapeView: {
     marginTop: 20,
