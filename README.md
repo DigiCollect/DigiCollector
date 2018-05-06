@@ -19,3 +19,6 @@ React navigation: npm i react-native-router-flux --sav
 
 ## Resources
 https://facebook.github.io/react-native/docs/getting-started.html
+
+# How to reset cache:
+npm start -- --reset-cache
