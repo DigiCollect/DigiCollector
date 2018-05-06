@@ -23,7 +23,7 @@ class SignUp extends Component {
         this.setState({ confirmpassword: text })
      }
      next = (username, emailaddress, pass) => {
-        alert('username: ' + username + ' emailaddress: ' + emailaddress + 'password: ' + pass)
+        //alert('username: ' + username + ' emailaddress: ' + emailaddress + 'password: ' + pass)
         Actions.menu()
      }
      goToSignIn = () => {

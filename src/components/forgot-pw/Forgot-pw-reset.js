@@ -13,7 +13,7 @@ class Inputs extends Component {
          <View style = {styles.container}>
             <Image style= {styles.background} source={require('../../../Images/BG.png')}/>
             <View style={styles.content}>
-              <Text style={styles.Headertext}>Recover your password</Text>
+              <Text style={styles.Headertext}>Reset your password</Text>
               <TextInput style = {styles.input}
               underlineColorAndroid = "transparent"
               placeholder = "New Password"

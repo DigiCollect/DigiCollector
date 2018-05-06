@@ -7,6 +7,7 @@ import SignUp from '../sign-up/Sign-up.js'
 import ForgotPw from '../forgot-pw/Forgot-pw.js'
 import forgotPwEmailVerify from '../forgot-pw/Forgot-pw-confirm-email.js'
 import resetPassword from '../forgot-pw/Forgot-pw-reset.js'
+import signOut from '../../Sign-out.js'
 
 const Routes = () => (
     <Router>
@@ -18,6 +19,7 @@ const Routes = () => (
             <Scene key = "forgotPwEmailVerify" component = {forgotPwEmailVerify} title = "forgotPwEmailVerify" hideNavBar={true}/>
             <Scene key = "resetPassword" component = {resetPassword} title = "resetPassword" hideNavBar={true}/>
             <Scene key = "menu" component = {Menu} title = "Menu" />
+            <Scene key = "signOut" component = {signOut} title = "signOut" hideNavBar={true}/>
         </Scene>
     </Router>
 )

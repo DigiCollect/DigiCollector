@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native'
+import {Actions} from 'react-native-router-flux';
 
 class Menu extends Component {
     state = {
@@ -39,7 +40,10 @@ class Menu extends Component {
         ]
     }
     alertItemName = (item) => {
-        alert(item.name)
+        if (item.id == 7)
+        {
+            Actions.signOut()
+        }
     }
 
     render() {

@@ -18,7 +18,7 @@ class Inputs extends Component {
     Actions.forgotPw()
    }
    login = (username, pass) => {
-      alert('username: ' + username + ' password: ' + pass)
+      //alert('username: ' + username + ' password: ' + pass)
       Actions.menu()
    }
    goToSignUp = () => {
