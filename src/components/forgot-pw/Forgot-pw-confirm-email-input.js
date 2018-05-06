@@ -12,10 +12,8 @@ class Inputs extends Component {
    goToSignUp = () => {
       Actions.startUp()
    }
-   login = (emailaddress) => {
-      alert('emailaddress: ' + emailaddress)
-      //Actions.menu()
-      Actions.startUp()
+   goToResetPassword = () => {
+      Actions.resetPassword()
    }
    render(){
       return (
@@ -36,11 +34,7 @@ class Inputs extends Component {
                   Please enter the verification code sent to your email address</Text>
               {/* </View> */}
                 
-                <TouchableOpacity
-                style = {styles.OvalShapeView}
-                onPress = {
-                    () => this.login(this.state.emailaddress)
-                }>
+                <TouchableOpacity style = {styles.OvalShapeView} onPress = {this.goToResetPassword}>
                   <Text style = {styles.buttonText}>Confirm</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress = {this.goToSignUp}>
