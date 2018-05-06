@@ -35,7 +35,7 @@ class Inputs extends Component {
                 placeholder = "Username"
                 placeholderTextColor = "#cccccc"
                 autoCapitalize = "none"
-                maxLength = '12'
+                maxLength = {12}
                 onChangeText = {this.handleUsername}
                 />
                               
@@ -45,12 +45,12 @@ class Inputs extends Component {
                 placeholderTextColor = "#cccccc"
                 autoCapitalize = "none"
                 secureTextEntry = {true}
-                maxLength = '12'
+                maxLength = {12}
                 onChangeText = {this.handlePassword}
                 /> 
 
-                <TouchableOpacity style={styles.forgotPassword} onPress = {this.goToForgotPw}
-                ><Text style={styles.forgotPassword}>Forgot password</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.forgotPasswordView} onPress = {this.goToForgotPw}
+                ><Text style={styles.forgotPasswordText}>Forgot password</Text></TouchableOpacity>
                 
                 <TouchableOpacity
                 style = {styles.OvalShapeView}
@@ -61,7 +61,7 @@ class Inputs extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity onPress = {this.goToSignIn}>
                   <Text style = {styles.LinkText}>Don't have an account? Sign Up</Text>
-                </TouchableOpacity>             
+                </TouchableOpacity>
             </View>
         </View>
       )
@@ -73,8 +73,7 @@ const styles = StyleSheet.create({
    container: {
     flex: 1,
     backgroundColor: '#333',
-    alignItems: 'center',
-    // justifyContent: 'center',
+    //alignItems: 'center',
    },
    background: {
     backgroundColor: '#ccc',
@@ -101,17 +100,16 @@ const styles = StyleSheet.create({
       fontFamily: 'Helvetica Neue',
       fontSize: 19,
       color: '#fff',
-      // borderBottomWidth: 1,
-      // borderColor: '#fff'
       borderBottomWidth: 0.4,
       borderColor:'#fff',
       width: Dimensions.get('window').width,
    },
-   forgotPassword: {
-      //justifyContent: 'flex-end',
+   forgotPasswordView: {
       paddingRight: 15,
-      //height: 40,
       margin: 0,
+      alignSelf: 'flex-end',
+   },
+   forgotPasswordText: {
       textAlign: 'right',
       alignSelf: 'flex-end',
       fontFamily: 'Helvetica Neue',
