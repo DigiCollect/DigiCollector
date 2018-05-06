@@ -12,9 +12,6 @@ class Inputs extends Component {
    goToSignUp = () => {
       Actions.startUp()
    }
-   goToVerifyEmail = () => {
-      Actions.forgotPwEmailVerify()
-   }
    login = (emailaddress) => {
       alert('emailaddress: ' + emailaddress)
       //Actions.menu()
@@ -29,18 +26,22 @@ class Inputs extends Component {
                 <Text style={styles.Headertext}>Recover your password</Text> 
                   <TextInput style = {styles.input}
                   underlineColorAndroid = "transparent"
-                  placeholder = "Email Address"
+                  placeholder = "Verification Code"
                   placeholderTextColor = "#cccccc"
                   autoCapitalize = "none"
                   onChangeText = {this.handleEmailAddress}
                   />
 
                   <Text style={styles.text}>
-                  Before we can reset your password, please enter your email address to help identify your account</Text>
+                  Please enter the verification code sent to your email address</Text>
               {/* </View> */}
                 
-                <TouchableOpacity style = {styles.OvalShapeView} onPress = {this.goToVerifyEmail}>
-                  <Text style = {styles.buttonText}>Search Account</Text>
+                <TouchableOpacity
+                style = {styles.OvalShapeView}
+                onPress = {
+                    () => this.login(this.state.emailaddress)
+                }>
+                  <Text style = {styles.buttonText}>Confirm</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress = {this.goToSignUp}>
                   <Text style = {styles.LinkText}>Don't have an account? Sign Up</Text>
