@@ -8,23 +8,61 @@ class SignUp extends Component {
         username: '',
         emailaddress: '',
         password: '',
-        confirmpassword: ''
+        confirmpassword: '',
+        hasError: false,
+        errorMessage: ''
      }
      handleUsername = (text) => {
         this.setState({ username: text })
+        if(this.state.username.length <=0){
+          this.setState({hasError: true, errorMessage: "Username field is mandatory"})
+        }
+        else{
+          this.setState({hasError: false})
+        }
+        
      }
      handleEmailaddress = (text) => {
         this.setState({ emailaddress: text })
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(this.state.emailaddress) === false){
+          this.setState({hasError: true, errorMessage: "Invalid email address"})
+        }
+        else{
+          this.setState({hasError: false})
+        }
      }
      handlePassword = (text) => {
         this.setState({ password: text })
+        if(this.state.password.length <=12){
+          this.setState({hasError: true, errorMessage: "Password must be at least 12 characters"})
+        }
+        else{
+          this.setState({hasError: false})
+        }
      }
      handleConfirmPassword = (text) => {
         this.setState({ confirmpassword: text })
+        if(this.state.confirmpassword.length <=12){
+          this.setState({hasError: true, errorMessage: "Password must be at least 12 characters"})
+        }
+        if(this.state.confirmpassword != this.state.password){
+          this.setState({hasError: true, errorMessage: "Passwords does not match"})
+        }
+        else{
+          this.setState({hasError: false})
+        }
      }
-     next = (username, emailaddress, pass) => {
+     next = (username, emailaddress, pass, hasError) => {
         //alert('username: ' + username + ' emailaddress: ' + emailaddress + 'password: ' + pass)
-        Actions.menu()
+        if (hasError) {
+          // not a valid email
+          alert('Invalid details. Please try again')
+        } else {
+          // valid email
+          Actions.menu()
+        }
+        
      }
      goToSignIn = () => {
         Actions.signIn()
@@ -72,11 +110,13 @@ class SignUp extends Component {
                   maxLength = {12}
                   onChangeText = {this.handleConfirmPassword}
                   /> 
+
+                  {this.state.hasError ? <Text style={styles.LinkText}>{this.state.errorMessage}</Text> : null}
   
                   <TouchableOpacity
                   style = {styles.OvalShapeView}
                   onPress = {
-                      () => this.next(this.state.username, this.state.emailaddress, this.state.password)
+                      () => this.next(this.state.username, this.state.emailaddress, this.state.password, this.state.hasError)
                   }>
                   <Text style = {styles.buttonText}>Next</Text>
                   </TouchableOpacity>
