@@ -7,23 +7,12 @@ class Inputs extends Component {
    state = {
       username: '',
       password: '',
-      hasError: false,
+      hasError: true,
       ErrorUsername: '',
       ErrorPassword: '',
       validityUsername: false,
       validityPassword: false,
    }
-
-  //  handleBlur = (field) => (evt) => {
-  //   this.setState({
-  //     touched: { handleUsername: true }
-  //   });
-  //   alert(this.state.touched.handleUsername)
-
-  //   if(this.state.touched.handleUsername){
-  //     hasError: true
-  //   }
-  // }
 
    handleUsername = (text) => {
       this.setState({ username: text })
@@ -52,7 +41,9 @@ class Inputs extends Component {
    }
    login = (username, pass) => {
       //alert('username: ' + username + ' password: ' + pass)
-      Actions.menu()
+      if(!this.state.hasError){
+        Actions.menu()
+      }
    }
    goToSignUp = () => {
     Actions.signUp()
