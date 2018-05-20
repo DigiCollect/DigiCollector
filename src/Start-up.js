@@ -17,16 +17,20 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <Image style= {styles.background} source={require('./../Images/BG.png')}/>
-          <View style={styles.content}>
-            <Image source={require('./../Images/Logo.png')}/>
-            <Text style={styles.text}>One less thing to worry about</Text> 
-            <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToSignUp}>
-                <Text style={styles.buttonText}>Get Started</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress = {this.goToSignIn}>
-              <Text style = {styles.LinkText}>Already have an account? Sign In</Text>
-            </TouchableOpacity>
+        <Image style= {styles.background} source={require('./../Images/BG.png')}/>
+        <View style={styles.header}>
+          <Image source={require('./../Images/Logo.png')}/>
+        </View>
+        <View style={styles.center}>
+          <Text style={styles.text}>One less thing to worry about</Text> 
+        </View>
+        <View style={styles.footer}>
+          <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToSignUp}>
+              <Text style={styles.buttonText}>Get Started</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress = {this.goToSignIn}>
+            <Text style = {styles.LinkText}>Already have an account? Sign In</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -34,25 +38,34 @@ class Login extends Component {
 }
 export default Login
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create(
+{
   container: {
     flex: 1,
     backgroundColor: '#333',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  header:{
+    height: 100,
+    marginTop: 50, 
+    alignItems: 'center'
+  },
+  footer: {
+    height: 100,
+    marginBottom: 50,
+    alignItems: 'center'
+  },
+  center: {
+    height: 100,
   },
   background: {
     backgroundColor: '#ccc',
-    opacity: 0.5,
+    opacity: 0.4,
     flex: 1,
     position: 'absolute',
     width: '100%',
     height: '100%',
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
   },
   text: {
     textAlign: 'center',
@@ -63,25 +76,6 @@ const styles = StyleSheet.create({
     paddingRight:10,
     fontSize: 36
   },
-  button: {
-      backgroundColor: '#333',
-      justifyContent: 'center',
-      alignSelf: 'stretch',
-      alignItems: 'center',
-      marginTop: '50%',
-      height: '8%',
-  },
-  buttonText: {
-      color: '#fff',
-      position: 'absolute',
-      fontWeight: '500',
-      fontFamily: 'Helvetica Neue',
-      paddingTop:0,
-      marginTop: 0,
-      fontSize: 19, 
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-  },
   OvalShapeView: {
     marginTop: 20,
     width: 315,
@@ -91,8 +85,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonText: {
+    color: '#fff',
+    position: 'absolute',
+    fontWeight: '500',
+    fontFamily: 'Helvetica Neue',
+    paddingTop:0,
+    marginTop: 0,
+    fontSize: 19, 
+  },
   LinkText: {
-    color: '#fff'
+    color: '#fff',
+    marginTop: 20,
   }
-
 });

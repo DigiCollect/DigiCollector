@@ -114,13 +114,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  content: {
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    padding: 0,
-    margin: 0,
-  },
   input: {
     justifyContent: 'flex-start',
     textAlign: 'left',
