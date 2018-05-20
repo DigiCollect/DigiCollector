@@ -28,8 +28,12 @@ class Inputs extends Component {
       return (
          <View style = {styles.container}>
             <Image style= {styles.background} source={require('../../../Images/BG.png')}/>
-            <View style={styles.content}>
-                <Image source={require('../../../Images/Logo.png')}/>
+            <View style={styles.header}>
+              <Image source={require('../../../Images/Logo.png')}/>
+            </View>
+            <View style={styles.center}>
+              <View style= {styles.textView}>
+                <Image style= {styles.icon} source={require('../../../Images/Username.png')}/>
                 <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
                 placeholder = "Username"
@@ -38,7 +42,10 @@ class Inputs extends Component {
                 maxLength = {12}
                 onChangeText = {this.handleUsername}
                 />
-                              
+              </View>
+              <View style={styles.lineStyle}/>
+              <View style= {styles.textView}>
+                <Image style= {styles.icon} source={require('../../../Images/lockPad.png')}/>             
                 <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
                 placeholder = "Password"
@@ -48,20 +55,19 @@ class Inputs extends Component {
                 maxLength = {12}
                 onChangeText = {this.handlePassword}
                 /> 
-
-                <TouchableOpacity style={styles.forgotPasswordView} onPress = {this.goToForgotPw}
-                ><Text style={styles.forgotPasswordText}>Forgot password</Text></TouchableOpacity>
-                
-                <TouchableOpacity
-                style = {styles.OvalShapeView}
-                onPress = {
-                    () => this.login(this.state.username, this.state.password)
-                }>
+              </View>
+              <View style={styles.lineStyle}/>
+              <TouchableOpacity style={styles.forgotPasswordView} onPress = {this.goToForgotPw}>
+                <Text style={styles.forgotPasswordText}>Forgot password</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.footer}>
+              <TouchableOpacity style = {styles.OvalShapeView} onPress = { () => this.login(this.state.username, this.state.password)}>
                 <Text style = {styles.buttonText}>Log In</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress = {this.goToSignUp}>
-                  <Text style = {styles.LinkText}>Don't have an account? Sign Up</Text>
-                </TouchableOpacity>
+              </TouchableOpacity>
+              <TouchableOpacity onPress = {this.goToSignUp}>
+                <Text style = {styles.LinkText}>Don't have an account? Sign Up</Text>
+              </TouchableOpacity>
             </View>
         </View>
       )
@@ -70,12 +76,36 @@ class Inputs extends Component {
 export default Inputs
 
 const styles = StyleSheet.create({
-   container: {
+  container: {
     flex: 1,
     backgroundColor: '#333',
-    //alignItems: 'center',
-   },
-   background: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  header:{
+    height: 100,
+    marginTop: 70, 
+    alignItems: 'center'
+  },
+  footer: {
+    height: 100,
+    marginBottom: 70,
+    alignItems: 'center'
+  },
+  center: {
+    height: 100,
+  },
+  textView: {
+    flex: 1, 
+    flexDirection: 'row',
+    marginTop: 30,
+  },
+  icon: {
+    width: 20,
+    height: 20,
+    marginLeft: 15,
+  },
+  background: {
     backgroundColor: '#ccc',
     opacity: 0.4,
     flex: 1,
@@ -90,40 +120,38 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
   },
-   input: {
-      justifyContent: 'flex-start',
-      textAlign: 'left',
-      alignSelf: 'flex-start',
-      paddingLeft: 15,
-      paddingBottom: 15,
-      height: 40,
-      fontFamily: 'Helvetica Neue',
-      fontSize: 19,
-      color: '#fff',
-      borderBottomWidth: 0.4,
-      borderColor:'#fff',
-      width: Dimensions.get('window').width,
-   },
-   forgotPasswordView: {
-      paddingRight: 15,
-      margin: 0,
-      alignSelf: 'flex-end',
-   },
-   forgotPasswordText: {
-      textAlign: 'right',
-      alignSelf: 'flex-end',
-      fontFamily: 'Helvetica Neue',
-      fontSize: 15,
-      color: '#fff',
-   },
-   lineStyle:{
-      borderWidth: 0.4,
-      borderColor:'#fff',
-      width: Dimensions.get('window').width,
-      margin: 0,
-      padding: 0,
+  input: {
+    justifyContent: 'flex-start',
+    textAlign: 'left',
+    alignSelf: 'flex-start',
+    paddingLeft: 15,
+    paddingBottom: 15,
+    height: 40,
+    fontFamily: 'Helvetica Neue',
+    fontSize: 19,
+    color: '#FFFFFF50',
+    width: Dimensions.get('window').width,
   },
-   OvalShapeView: {
+  forgotPasswordView: {
+    paddingRight: 15,
+    paddingTop: 15,
+    margin: 0,
+    alignSelf: 'flex-end',
+  },
+  forgotPasswordText: {
+    textAlign: 'right',
+    alignSelf: 'flex-end',
+    fontFamily: 'Helvetica Neue',
+    fontSize: 15,
+    color: '#FFFFFF95',
+  },
+  lineStyle:{
+    flex: 1, 
+    borderBottomWidth: 0.4,
+    borderColor:'#FFFFFF60',
+    marginTop: 40,
+  },
+  OvalShapeView: {
     marginTop: 20,
     width: 315,
     height: 56,
@@ -140,8 +168,9 @@ const styles = StyleSheet.create({
     paddingTop:0,
     marginTop: 0,
     fontSize: 19, 
-    },
+  },
   LinkText: {
-      color: '#fff'
-    }
+    color: '#fff',
+    marginTop: 20,
+  }
 })
