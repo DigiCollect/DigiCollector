@@ -84,12 +84,12 @@ const styles = StyleSheet.create({
   },
   header:{
     height: 100,
-    marginTop: 70, 
+    marginTop: 50, 
     alignItems: 'center'
   },
   footer: {
     height: 100,
-    marginBottom: 70,
+    marginBottom: 50,
     alignItems: 'center'
   },
   center: {
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     marginLeft: 15,
+    opacity: 0.7,
   },
   background: {
     backgroundColor: '#ccc',
