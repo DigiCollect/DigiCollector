@@ -159,7 +159,7 @@ const styles = StyleSheet.create(
   header:{
     height: 100,
     flex: 1,
-    marginTop: 100, 
+    marginTop: 50, 
     alignItems: 'center'
   },
   footer: {
@@ -185,7 +185,6 @@ const styles = StyleSheet.create(
     opacity: 0.7,
   },
   Headertext: {
-    alignItems: 'center',
     textAlign: 'center',
     color: '#fff',
     fontWeight: '300',
