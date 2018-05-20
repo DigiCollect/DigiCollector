@@ -6,13 +6,46 @@ const Dimensions = require('Dimensions');
 class Inputs extends Component {
    state = {
       username: '',
-      password: ''
+      password: '',
+      hasError: false,
+      ErrorUsername: '',
+      ErrorPassword: '',
+      validityUsername: false,
+      validityPassword: false,
    }
+
+  //  handleBlur = (field) => (evt) => {
+  //   this.setState({
+  //     touched: { handleUsername: true }
+  //   });
+  //   alert(this.state.touched.handleUsername)
+
+  //   if(this.state.touched.handleUsername){
+  //     hasError: true
+  //   }
+  // }
+
    handleUsername = (text) => {
       this.setState({ username: text })
+      if(this.state.username.length <=0){
+        this.setState({ validityUsername: false, hasError: true, ErrorUsername:"Username field is mandatory"})
+      }
+      else{
+        this.setState({validityUsername: true, hasError: false})
+      }
    }
    handlePassword = (text) => {
       this.setState({ password: text })
+      
+      if(this.state.password.length <=0){
+        this.setState({validityPassword: false, hasError: true, ErrorPassword:"Password field is mandatory"})
+      }
+      else if(this.state.password.length <7){
+        this.setState({validityPassword: false, hasError: true, ErrorPassword:"Password must be at least 8 characters"})
+      }
+      else{
+        this.setState({ validityPassword: true, hasError: false})
+      }
    }
    goToForgotPw = () => {
     Actions.forgotPw()
@@ -37,33 +70,39 @@ class Inputs extends Component {
                 <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
                 placeholder = "Username"
-                placeholderTextColor = "#cccccc"
+                placeholderTextColor = "#FFFFFF50"
                 autoCapitalize = "none"
                 maxLength = {12}
                 onChangeText = {this.handleUsername}
+                onBlur={this.handleUsername}
                 />
               </View>
               <View style={styles.lineStyle}/>
+              {!this.state.validityUsername ? <Text style={styles.errors}>{this.state.ErrorUsername}</Text> : null}
+
               <View style= {styles.textView}>
                 <Image style= {styles.icon} source={require('../../../Images/lockPad.png')}/>             
                 <TextInput style = {styles.input}
                 underlineColorAndroid = "transparent"
                 placeholder = "Password"
-                placeholderTextColor = "#cccccc"
+                placeholderTextColor = "#FFFFFF50"
                 autoCapitalize = "none"
                 secureTextEntry = {true}
                 maxLength = {12}
                 onChangeText = {this.handlePassword}
+                onBlur={this.handlePassword}
                 /> 
               </View>
               <View style={styles.lineStyle}/>
+              {!this.state.validityPassword ? <Text style={styles.errors}>{this.state.ErrorPassword}</Text> : null}
+
               <TouchableOpacity style={styles.forgotPasswordView} onPress = {this.goToForgotPw}>
                 <Text style={styles.forgotPasswordText}>Forgot password</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.footer}>
               <TouchableOpacity style = {styles.OvalShapeView} onPress = { () => this.login(this.state.username, this.state.password)}>
-                <Text style = {styles.buttonText}>Log In</Text>
+                <Text style = {styles.buttonText} disabled={this.state.hasError === true}>Log In</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress = {this.goToSignUp}>
                 <Text style = {styles.LinkText}>Don't have an account? Sign Up</Text>
@@ -123,7 +162,7 @@ const styles = StyleSheet.create({
     height: 40,
     fontFamily: 'Helvetica Neue',
     fontSize: 19,
-    color: '#FFFFFF50',
+    color: '#cccccc',
     width: Dimensions.get('window').width,
   },
   forgotPasswordView: {
@@ -131,6 +170,13 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     margin: 0,
     alignSelf: 'flex-end',
+  },
+  errors: {
+    paddingRight: 15,
+    paddingTop: 15,
+    margin: 0,
+    textAlign: 'left',
+    color: '#fff',
   },
   forgotPasswordText: {
     textAlign: 'right',
