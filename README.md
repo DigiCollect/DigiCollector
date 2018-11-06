@@ -22,3 +22,6 @@ https://facebook.github.io/react-native/docs/getting-started.html
 
 # How to reset cache:
 npm start -- --reset-cache
+
+# Sneak peak of the app
+![alt text](https://github.com/DigiCollect/DigiCollector/blob/master/Images/app.PNG "Logo Title Text 1")
