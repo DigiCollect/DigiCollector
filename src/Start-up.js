@@ -22,7 +22,7 @@ class Login extends Component {
           <Image source={require('./../Images/Logo.png')}/>
         </View>
         <View style={styles.center}>
-          <Text style={styles.text}>One less thing to worry about</Text> 
+          <Text style={styles.text}>A solution for your digital needs</Text> 
         </View>
         <View style={styles.footer}>
           <TouchableOpacity style={styles.OvalShapeView} onPress = {this.goToSignUp}>
