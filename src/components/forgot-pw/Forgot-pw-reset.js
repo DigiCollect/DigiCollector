@@ -49,8 +49,6 @@ const styles = StyleSheet.create({
   //alignItems: 'center',
   },
   background: {
-  backgroundColor: '#ccc',
-  opacity: 0.4,
   flex: 1,
   position: 'absolute',
   width: '100%',
