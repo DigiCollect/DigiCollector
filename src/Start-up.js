@@ -60,8 +60,6 @@ const styles = StyleSheet.create(
     height: 100,
   },
   background: {
-    backgroundColor: '#ccc',
-    opacity: 0.4,
     flex: 1,
     position: 'absolute',
     width: '100%',

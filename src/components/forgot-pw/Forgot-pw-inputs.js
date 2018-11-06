@@ -60,8 +60,6 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
    },
    background: {
-    backgroundColor: '#ccc',
-    opacity: 0.5,
     flex: 1,
     position: 'absolute',
     width: '100%',

@@ -137,8 +137,6 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   background: {
-    backgroundColor: '#ccc',
-    opacity: 0.4,
     flex: 1,
     position: 'absolute',
     width: '100%',

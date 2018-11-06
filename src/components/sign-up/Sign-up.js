@@ -81,7 +81,7 @@ class SignUp extends Component {
                     <TextInput style = {styles.input}
                     underlineColorAndroid = "transparent"
                     placeholder = "Username"
-                    placeholderTextColor = "#cccccc"
+                    placeholderTextColor = "#FFFFFF50"
                     autoCapitalize = "none"
                     maxLength = {12}
                     onChangeText = {this.handleUsername}
@@ -93,9 +93,9 @@ class SignUp extends Component {
                     <TextInput style = {styles.input}
                     underlineColorAndroid = "transparent"
                     placeholder = "Email address"
-                    placeholderTextColor = "#cccccc"
+                    placeholderTextColor = "#FFFFFF50"
                     autoCapitalize = "none"
-                    maxLength = {12}
+                    maxLength = {40}
                     onChangeText = {this.handleEmailaddress}
                     />
                   </View>
@@ -105,7 +105,7 @@ class SignUp extends Component {
                     <TextInput style = {styles.input}
                     underlineColorAndroid = "transparent"
                     placeholder = "Password"
-                    placeholderTextColor = "#cccccc"
+                    placeholderTextColor = "#FFFFFF50"
                     autoCapitalize = "none"
                     secureTextEntry = {true}
                     maxLength = {12}
@@ -118,7 +118,7 @@ class SignUp extends Component {
                     <TextInput style = {styles.input}
                     underlineColorAndroid = "transparent"
                     placeholder = "Confirm Password"
-                    placeholderTextColor = "#cccccc"
+                    placeholderTextColor = "#FFFFFF50"
                     autoCapitalize = "none"
                     secureTextEntry = {true}
                     maxLength = {12}
@@ -194,8 +194,6 @@ const styles = StyleSheet.create(
     fontSize: 36
    },
   background: {
-    backgroundColor: '#ccc',
-    opacity: 0.4,
     flex: 1,
     position: 'absolute',
     width: '100%',
@@ -210,7 +208,7 @@ const styles = StyleSheet.create(
     height: 40,
     fontFamily: 'Helvetica Neue',
     fontSize: 19,
-    color: '#FFFFFF50',
+    color: '#cccccc',
     width: Dimensions.get('window').width,
   },
   lineStyle:{
